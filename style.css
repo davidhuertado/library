@@ -81,7 +81,23 @@ header {
   background-color: #fff;
 }
 
-.big-container {
-  background-color: #c06c84;
-  height: 300px;
+.library-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 600px;
+  padding: 1rem;
+}
+
+.book-container {
+  width: 250px;
+  text-align: center;
+  background-color: #ff9a00;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.book-lines {
+  margin: 1rem;
 }
