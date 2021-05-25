@@ -16,6 +16,10 @@ body {
 }
 
 .hide {
+  display: none;
+}
+
+#hide-card {
   margin: 1rem;
   display: flex;
   display: none;

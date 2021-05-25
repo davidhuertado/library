@@ -1,6 +1,7 @@
 //Array for storing book
 let myLibrary = [];
-const libraryContainer = document.querySelector('.library-container');
+const newBookBtn = document.querySelector('.new-book');
+const hideCard = document.querySelector('.hide-card');
 
 const Book = class {
   constructor(title, author, pages, read) {
@@ -21,6 +22,9 @@ const Book = class {
 };
 
 const libraryFunctions = {
+  libraryContainer: document.querySelector('.library-container'),
+
+  //FUNCTIONS
   addBookToLibrary: function (...book) {
     myLibrary.push(...book);
   },
@@ -35,7 +39,7 @@ const libraryFunctions = {
       let readItElement = document.createElement('h4');
 
       //Append elements
-      libraryContainer.appendChild(bookDiv);
+      libraryFunctions.libraryContainer.appendChild(bookDiv);
       bookDiv.appendChild(titleElement);
       bookDiv.appendChild(authorElement);
       bookDiv.appendChild(pagesElement);
@@ -58,6 +62,9 @@ const libraryFunctions = {
   },
 };
 
+newBookBtn.addEventListener('click', function () {
+  hideCard.classList.toggle('hide');
+});
 const biblia = new Book('Biblia', 'Jesus', 1000, false);
 const hobbit = new Book('Hobbit', 'Tolkien', 1500, true);
 libraryFunctions.addBookToLibrary(biblia, hobbit);
