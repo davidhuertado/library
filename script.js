@@ -1,4 +1,4 @@
-//Array for storing book
+//Array for storing books
 let myLibrary = [];
 const newBookBtn = document.querySelector('.new-book');
 const hideCard = document.querySelector('.hide-card');
