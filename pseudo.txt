@@ -1,0 +1,4 @@
+escoger con querys selector.value
+queryselectorall(#id del form input)
+Extraigo los valores
+Uso class Book

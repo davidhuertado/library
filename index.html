@@ -18,8 +18,11 @@
       <button type="button" class="new-book btn">New Book</button>
     </header>
     <section class="library-section">
-      <div class="hide hide-card">
-        <h2 class="add-title">Add a new book</h2>
+      <div class="hide-card hide">
+        <div class="hide-header">
+          <button class="close-btn">&times;</button>
+          <h2 class="add-title">Add a new book</h2>
+        </div>
         <form action="" id="form">
           <label for="name" class="form-labels">Name of the book</label>
           <input type="text" id="name" class="add-input" placeholder="Name" />
@@ -34,7 +37,7 @@
           <input type="number" id="pages" class="add-input" />
           <label for="read" class="form-labels">Read it?</label>
           <input type="checkbox" id="read" class="add-input" />
-          <input type="submit" class="btn" />
+          <button type="button" class="btn submit-btn">Add book</button>
         </form>
       </div>
 

@@ -15,26 +15,42 @@ body {
   justify-content: center;
 }
 
-.hide {
+.hide.hide-card {
   display: none;
 }
 
-#hide-card {
-  margin: 1rem;
+.hide-card {
+  margin: 2rem;
   display: flex;
-  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ff9a00;
+  position: absolute;
+  background-color: #3ec1d3;
   width: 50%;
   border: 1px solid;
   border-radius: 5px;
+}
+
+.hide-header {
+  width: 90%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .add-title {
   font-size: 2.5rem;
   margin: 1rem;
 }
+.hide-header .close-btn {
+  align-self: flex-end;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
 #form {
   display: flex;
   flex-direction: column;
@@ -88,6 +104,7 @@ header {
 .library-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   width: 90%;
   height: 600px;
@@ -104,4 +121,14 @@ header {
 
 .book-lines {
   margin: 1rem;
+}
+
+.delete-btn {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  padding: 0.5rem;
+  margin: 1.5rem;
+  border: 1px solid;
+  border-radius: 2px;
+  background-color: #fff;
 }
