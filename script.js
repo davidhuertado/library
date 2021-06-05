@@ -1,8 +1,4 @@
-//TODO Terminar funcion de boton borrar
-//Array for storing books
-
 let myLibrary = [];
-let deleteBtns = [];
 let bookIndex = 0;
 const newBookBtn = document.querySelector('.new-book');
 const submitBtn = document.querySelector('.submit-btn');
@@ -17,20 +13,10 @@ const Book = class {
     this.read = read;
     this.display = false;
   }
-  info() {
-    let infoString = `${this.title} by ${this.author}, ${this.pages} pages, `;
-    if (this.read === true) {
-      infoString += 'read.';
-    } else {
-      infoString += 'not read yet.';
-    }
-    return infoString;
-  }
 };
 
 const libraryFunctions = {
   libraryContainer: document.querySelector('.library-container'),
-
   //FUNCTIONS
   addBookToLibrary: function (...book) {
     myLibrary.push(...book);
@@ -51,7 +37,7 @@ const libraryFunctions = {
       let readItElement = document.createElement('h4');
       let deleteElement = document.createElement('button');
       let readBtnElement = undefined;
-      if (book.read === false) {
+      if (!book.read) {
         readBtnElement = document.createElement('button');
       }
 
@@ -64,13 +50,15 @@ const libraryFunctions = {
       if (readBtnElement !== undefined) {
         bookDiv.appendChild(readBtnElement);
       }
-
       bookDiv.appendChild(deleteElement);
       this.libraryContainer.appendChild(bookDiv);
+
       //Text of the elements
+
       titleElement.textContent = `"${book.title}"`;
       authorElement.textContent = book.author;
       pagesElement.textContent = book.pages;
+
       book.read
         ? (readItElement.textContent = 'Read')
         : (readItElement.textContent = 'Not read yet');
@@ -129,6 +117,7 @@ document
     }
   });
 
+//Read BTN
 document
   .querySelector('.library-container')
   .addEventListener('click', function (e) {
@@ -136,20 +125,22 @@ document
       const index = e.target.parentElement.id.slice(9);
       for (let i = 0; i < myLibrary.length; i++) {
         if (myLibrary[i].position == index) {
-          e.target.parentElement.remove();
+          e.target.remove();
           myLibrary[i].read = true;
-          myLibrary[i].display = false;
-          libraryFunctions.displayLibrary();
         }
       }
     }
   });
+
+//New book BTN
 newBookBtn.addEventListener('click', function () {
   hideCard.classList.toggle('hide');
 });
 
+//Closing X BTN
 closeBtn.addEventListener('click', libraryFunctions.clearCard);
 
+//Submit BTN
 submitBtn.addEventListener('click', function () {
   const bookToAdd = new Book(
     formObject.formTitle.value,
@@ -162,8 +153,3 @@ submitBtn.addEventListener('click', function () {
   libraryFunctions.displayLibrary();
   libraryFunctions.clearCard();
 });
-// const biblia = new Book('Biblia', 'Jesus', 1000, false);
-// const hobbit = new Book('Hobbit', 'Tolkien', 1500, true);
-// libraryFunctions.addBookToLibrary(biblia, hobbit);
-
-// libraryFunctions.displayLibrary();

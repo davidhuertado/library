@@ -45,7 +45,7 @@ body {
 }
 .hide-header .close-btn {
   align-self: flex-end;
-  cursor: pointer;
+
   border: none;
   background: none;
   font-size: 1.5rem;
@@ -99,6 +99,7 @@ header {
   border: 1px solid;
   border-radius: 2px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .library-container {
@@ -131,4 +132,22 @@ header {
   border: 1px solid;
   border-radius: 2px;
   background-color: #fff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 766px) {
+  html {
+    font-size: 10px;
+  }
+
+  .add-input {
+    width: 50%;
+  }
+
+  .card-btn {
+    font-size: 1.2rem;
+  }
+  .library-container {
+    font-size: 1.3rem;
+  }
 }
