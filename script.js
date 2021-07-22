@@ -140,8 +140,26 @@ newBookBtn.addEventListener('click', function () {
 //Closing X BTN
 closeBtn.addEventListener('click', libraryFunctions.clearCard);
 
-//Submit BTN
+// Submit BTN
 submitBtn.addEventListener('click', function () {
+  const formPages = document.getElementById('pages');
+  const formTitle = document.getElementById('name');
+  const formAuthor = document.getElementById('author');
+  if (!formTitle.checkValidity()) {
+    alert(
+      'You have to write a Title. The Title needs to have at leats 3 characters'
+    );
+    return;
+  } else if (!formAuthor.checkValidity()) {
+    alert(
+      'You have to write an Author. The Author needs to have at leats 3 characters'
+    );
+    return;
+  } else if (!formPages.checkValidity()) {
+    alert(formPages.validationMessage);
+    return;
+  }
+
   const bookToAdd = new Book(
     formObject.formTitle.value,
     formObject.formAuthor.value,

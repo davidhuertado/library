@@ -20,21 +20,40 @@
     <section class="library-section">
       <div class="hide-card hide">
         <div class="hide-header">
-          <button class="close-btn">&times;</button>
+          <button type="button" class="close-btn">&times;</button>
           <h2 class="add-title">Add a new book</h2>
         </div>
-        <form action="" id="form">
+        <form id="form">
           <label for="name" class="form-labels">Name of the book</label>
-          <input type="text" id="name" class="add-input" placeholder="Name" />
+          <input
+            type="text"
+            id="name"
+            class="add-input"
+            placeholder="Name"
+            required
+            minlength="3"
+            maxlength="50"
+          />
           <label for="author" class="form-labels">Author</label>
           <input
             type="text"
             id="author"
             class="add-input"
             placeholder="Author"
+            required
+            minlength="3"
+            maxlength="20"
           />
           <label for="pages" class="form-labels">Pages</label>
-          <input type="number" id="pages" class="add-input" />
+          <input
+            type="number"
+            id="pages"
+            class="add-input"
+            value="1"
+            min="5"
+            max="10000"
+            required
+          />
           <label for="read" class="form-labels">Read it?</label>
           <input type="checkbox" id="read" class="add-input" />
           <button type="button" class="btn submit-btn">Add book</button>
